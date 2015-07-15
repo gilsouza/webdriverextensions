@@ -254,11 +254,6 @@
                 <artifactId>webdriverextensions-maven-plugin</artifactId>
                 <version>${webdriverextensions-maven-plugin.version}</version>
                 <executions>
-                    <execution>
-                        <goals>
-                            <goal>install-drivers</goal>
-                        </goals>
-                    </execution>
                 </executions>
                 <configuration>
                     <drivers>

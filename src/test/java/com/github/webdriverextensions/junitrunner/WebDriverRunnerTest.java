@@ -1,12 +1,15 @@
 package com.github.webdriverextensions.junitrunner;
 
 import static com.github.webdriverextensions.Bot.*;
+
 import com.github.webdriverextensions.junitrunner.annotations.Browsers;
 import com.github.webdriverextensions.junitrunner.annotations.Chrome;
 import com.github.webdriverextensions.junitrunner.annotations.Firefox;
 import com.github.webdriverextensions.junitrunner.annotations.HtmlUnit;
 import com.github.webdriverextensions.junitrunner.annotations.InternetExplorer;
 import com.github.webdriverextensions.junitrunner.annotations.Safari;
+
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -23,6 +26,7 @@ import org.junit.runner.RunWith;
 public class WebDriverRunnerTest {
 
     @Test
+    @Ignore
     public void successfulTest() {
         open("https://github.com");
         assertCurrentUrlContains("github");

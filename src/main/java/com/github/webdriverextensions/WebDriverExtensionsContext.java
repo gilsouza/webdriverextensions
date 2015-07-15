@@ -21,5 +21,9 @@ public class WebDriverExtensionsContext {
     public static void setDriver(WebDriver driver) {
         threadLocalDriver.set(driver);
     }
+    
+    public static boolean hasDriver() {
+    	return threadLocalDriver.get() != null ? true : false;
+    }
 
 }

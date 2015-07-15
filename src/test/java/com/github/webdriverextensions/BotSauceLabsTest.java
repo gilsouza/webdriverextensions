@@ -26,6 +26,7 @@ public class BotSauceLabsTest {
 
     @Test
     @Firefox
+    @Ignore
     public void browserIsTest() {
         assertThat(browser(), equalTo("firefox"));
         assertThat(browserIs("FIREFOX"), equalTo(true));
@@ -34,6 +35,7 @@ public class BotSauceLabsTest {
 
     @Test
     @Android
+    @Ignore
     public void browserIsAndroidTest() {
         assertThat(browser(), equalTo(BrowserType.ANDROID));
         assertThat(browserIsAndroid(), equalTo(true));
@@ -50,6 +52,7 @@ public class BotSauceLabsTest {
 
     @Test
     @Chrome
+    @Ignore
     public void browserIsChromeTest() {
         assertThat(browser(), equalTo(BrowserType.CHROME));
         assertThat(browserIsNotAndroid(), equalTo(true));
@@ -66,6 +69,7 @@ public class BotSauceLabsTest {
 
     @Test
     @Firefox
+    @Ignore
     public void browserIsFirefoxTest() {
         assertThat(browser(), equalTo(BrowserType.FIREFOX));
         assertThat(browserIsNotAndroid(), equalTo(true));
@@ -99,6 +103,7 @@ public class BotSauceLabsTest {
 
     @Test
     @IPad
+    @Ignore
     public void browserIsIPadTest() {
         assertThat(browser(), equalTo(BrowserType.IPAD));
         assertThat(browserIsNotAndroid(), equalTo(true));
@@ -115,6 +120,7 @@ public class BotSauceLabsTest {
 
     @Test
     @IPhone
+    @Ignore
     public void browserIsIPhoneTest() {
         assertThat(browser(), equalTo(BrowserType.IPHONE));
         assertThat(browserIsNotAndroid(), equalTo(true));
@@ -131,6 +137,7 @@ public class BotSauceLabsTest {
 
     @Test
     @InternetExplorer
+    @Ignore
     public void browserIsInternetExplorerTest() {
         assertThat(browserIsNotAndroid(), equalTo(true));
         assertThat(browserIsNotChrome(), equalTo(true));
@@ -146,6 +153,7 @@ public class BotSauceLabsTest {
 
     @Test
     @Opera
+    @Ignore
     public void browserIsOperaTest() {
         assertThat(browser(), equalTo(BrowserType.OPERA));
         assertThat(browserIsNotAndroid(), equalTo(true));
@@ -179,6 +187,7 @@ public class BotSauceLabsTest {
 
     @Test
     @Safari
+    @Ignore
     public void browserIsSafariTest() {
         assertThat(browser(), equalTo(BrowserType.SAFARI));
         assertThat(browserIsNotAndroid(), equalTo(true));
@@ -195,6 +204,7 @@ public class BotSauceLabsTest {
 
     @Test
     @Firefox(version = "30.0")
+    @Ignore
     public void versionIsTest() {
         assertThat(version(), equalTo("30.0"));
         assertThat(versionIs("30.0"), equalTo(true));
@@ -203,6 +213,7 @@ public class BotSauceLabsTest {
 
     @Test
     @Firefox(platform = Platform.LINUX)
+    @Ignore
     public void platformIsTest() {
         assertThat(platform(), equalTo(Platform.LINUX));
         assertThat(platformIs(Platform.LINUX), equalTo(true));
@@ -227,6 +238,7 @@ public class BotSauceLabsTest {
 
     @Test
     @Firefox(platform = Platform.LINUX)
+    @Ignore
     public void platformIsLinuxTest() {
         assertThat(platformIsNotAndroid(), equalTo(true));
         assertThat(platformIsLinux(), equalTo(true));
@@ -241,6 +253,7 @@ public class BotSauceLabsTest {
 
     @Test
     @Safari(platform = Platform.MAC)
+    @Ignore
     public void platformIsMacTest() {
         assertThat(platformIsNotAndroid(), equalTo(true));
         assertThat(platformIsNotLinux(), equalTo(true));
@@ -255,6 +268,7 @@ public class BotSauceLabsTest {
 
     @Test
     @Firefox(platform = Platform.UNIX)
+    @Ignore
     public void platformIsUnixTest() {
         assertThat(platformIsNotAndroid(), equalTo(true));
         assertThat(platformIsNotMac(), equalTo(true));
@@ -268,6 +282,7 @@ public class BotSauceLabsTest {
 
     @Test
     @Firefox(platform = Platform.WINDOWS)
+    @Ignore
     public void platformIsWindowsTest() {
         assertThat(platformIsNotAndroid(), equalTo(true));
         assertThat(platformIsNotLinux(), equalTo(true));

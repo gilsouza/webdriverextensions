@@ -2,9 +2,12 @@ package com.github.webdriverextensions.junitrunner;
 
 import static com.github.webdriverextensions.Bot.assertCurrentUrlContains;
 import static com.github.webdriverextensions.Bot.open;
+
 import com.github.webdriverextensions.junitrunner.annotations.Browsers;
 import com.github.webdriverextensions.junitrunner.annotations.Chrome;
 import com.github.webdriverextensions.junitrunner.annotations.RemoteAddress;
+
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.Platform;
@@ -21,6 +24,7 @@ import org.openqa.selenium.Platform;
 public class RemoteWebDriverRunnerTest {
 
     @Test
+    @Ignore
     public void openGoogleTest() {
         open("https://github.com");
         assertCurrentUrlContains("github");
