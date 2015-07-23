@@ -134,7 +134,7 @@ public class WebDriverRunner extends BlockJUnit4ClassRunner {
 
     public WebDriverRunner(Class<?> klass) throws InitializationError {
         super(klass);
-        //DriverPathLoader.loadDriverPaths(getTestClass().getJavaClass().getAnnotation(DriverPaths.class));
+        DriverPathLoader.loadDriverPaths(getTestClass().getJavaClass().getAnnotation(DriverPaths.class));
         ScreenshotsPathLoader.loadScreenshotsPath(getTestClass().getJavaClass().getAnnotation(ScreenshotsPath.class));
     }
 

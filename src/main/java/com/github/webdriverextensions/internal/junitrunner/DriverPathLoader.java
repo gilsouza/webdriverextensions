@@ -21,44 +21,15 @@ public class DriverPathLoader {
 
     private static void loadChromeDriverPath(String path) {
         PropertyUtils.setPropertyIfNotExists(CHROME_DRIVER_PROPERTY_NAME, path);
-        PropertyUtils.setPropertyIfNotExists(CHROME_DRIVER_PROPERTY_NAME, getChromeDriverDefaultPath());
     }
 
     private static void loadInternetExplorerDriverPath(String path) {
         PropertyUtils.setPropertyIfNotExists(IE_DRIVER_PROPERTY_NAME, System.getProperty(INTERNET_EXPLORER_DRIVER_PROPERTY_NAME)); // Alternative property name that follows naming convention
         PropertyUtils.setPropertyIfNotExists(IE_DRIVER_PROPERTY_NAME, path);
-        PropertyUtils.setPropertyIfNotExists(IE_DRIVER_PROPERTY_NAME, getInternetExplorerDriverDefaultPath());
     }
 
     private static void makeSureDriversAreExecutable() {
         FileUtils.makeExecutable(System.getProperty(CHROME_DRIVER_PROPERTY_NAME));
         FileUtils.makeExecutable(System.getProperty(IE_DRIVER_PROPERTY_NAME));
-    }
-
-    private static String getChromeDriverDefaultPath() {
-        if (OsUtils.isWindows()) {
-            return "drivers/chromedriver-windows-32bit.exe";
-        } else if (OsUtils.isMac()) {
-            return "drivers/chromedriver-mac-32bit";
-        } else if (OsUtils.isLinux()) {
-            if (OsUtils.is64Bit()) {
-                return "drivers/chromedriver-linux-64bit";
-            } else {
-                return "drivers/chromedriver-linux-32bit";
-            }
-        }
-        return null;
-    }
-
-    private static String getInternetExplorerDriverDefaultPath() {
-        if (OsUtils.isWindows()) {
-            if (PropertyUtils.isTrue(IE_DRIVER_USE64BIT_PROPERTY_NAME)
-                    || PropertyUtils.isTrue(INTERNET_EXPLORER_DRIVER_USE64BIT_PROPERTY_NAME)) {
-                return "drivers/internetexplorerdriver-windows-64bit.exe";
-            } else {
-                return "drivers/internetexplorerdriver-windows-32bit.exe";
-            }
-        }
-        return null;
     }
 }
